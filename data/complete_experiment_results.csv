@@ -1,0 +1,11 @@
+dataset,dataset_name,model,accuracy,precision,recall,f1,train_time,train_size
+original,Original Data,Logistic Regression,0.8204,0.7854,0.915,0.8453,0.0,3349
+original,Original Data,MultinomialNB,0.8257,0.8111,0.88,0.8441,0.0,3349
+original,Original Data,LinearSVC,0.815,0.7991,0.875,0.8353,0.01,3349
+original,Original Data,Random Forest,0.7507,0.6989,0.94,0.8017,0.13,3349
+original,Original Data,MLP Neural Network,0.8284,0.8119,0.885,0.8469,6.08,3349
+extended,Extended Data (Balanced & Cleaned),Logistic Regression,0.8231,0.8102,0.875,0.8413,0.01,4856
+extended,Extended Data (Balanced & Cleaned),MultinomialNB,0.8177,0.8113,0.86,0.835,0.0,4856
+extended,Extended Data (Balanced & Cleaned),LinearSVC,0.7802,0.781,0.82,0.8,0.01,4856
+extended,Extended Data (Balanced & Cleaned),Random Forest,0.7614,0.7467,0.84,0.7906,0.27,4856
+extended,Extended Data (Balanced & Cleaned),MLP Neural Network,0.807,0.7991,0.855,0.8261,9.62,4856

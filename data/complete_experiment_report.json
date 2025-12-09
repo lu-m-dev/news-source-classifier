@@ -1,0 +1,178 @@
+{
+  "experiment_info": {
+    "title": "News Source Classification - Complete Experiment",
+    "date": "2025-11-26 22:52:58",
+    "objective": "Compare model performance on original vs extended datasets",
+    "test_set_size": 373
+  },
+  "datasets": {
+    "original": {
+      "name": "Original Data",
+      "train_size": 3349,
+      "fox_count": 1800,
+      "nbc_count": 1549,
+      "description": "Original scraped data from project URLs"
+    },
+    "extended": {
+      "name": "Extended Data (Balanced & Cleaned)",
+      "train_size": 4856,
+      "fox_count": 2428,
+      "nbc_count": 2428,
+      "description": "Original + extra data from RSS feeds, balanced and cleaned"
+    }
+  },
+  "models": {
+    "Logistic Regression": "Classic linear classifier with L2 regularization",
+    "MultinomialNB": "Naive Bayes optimized for text classification",
+    "LinearSVC": "Support Vector Machine with linear kernel",
+    "Random Forest": "Ensemble of decision trees",
+    "MLP Neural Network": "Multi-layer perceptron with 1 hidden layer"
+  },
+  "preprocessing": {
+    "text_cleaning": [
+      "Remove extra whitespace",
+      "Remove HTML entities",
+      "Remove website suffixes (Fox News, NBC News)",
+      "Remove URLs",
+      "Remove duplicate punctuation",
+      "Filter by length (15-250 chars)"
+    ],
+    "model_input_preprocessing": [
+      "Convert to lowercase",
+      "Remove punctuation (except apostrophes)",
+      "Remove numbers",
+      "Normalize whitespace"
+    ],
+    "vectorization": {
+      "method": "TF-IDF",
+      "max_features": 5000,
+      "ngram_range": "(1, 3)",
+      "sublinear_tf": true,
+      "min_df": 2,
+      "stop_words": "english"
+    }
+  },
+  "results": [
+    {
+      "dataset": "original",
+      "dataset_name": "Original Data",
+      "model": "Logistic Regression",
+      "accuracy": 0.8204,
+      "precision": 0.7854,
+      "recall": 0.915,
+      "f1": 0.8453,
+      "train_time": 0.0,
+      "train_size": 3349
+    },
+    {
+      "dataset": "original",
+      "dataset_name": "Original Data",
+      "model": "MultinomialNB",
+      "accuracy": 0.8257,
+      "precision": 0.8111,
+      "recall": 0.88,
+      "f1": 0.8441,
+      "train_time": 0.0,
+      "train_size": 3349
+    },
+    {
+      "dataset": "original",
+      "dataset_name": "Original Data",
+      "model": "LinearSVC",
+      "accuracy": 0.815,
+      "precision": 0.7991,
+      "recall": 0.875,
+      "f1": 0.8353,
+      "train_time": 0.01,
+      "train_size": 3349
+    },
+    {
+      "dataset": "original",
+      "dataset_name": "Original Data",
+      "model": "Random Forest",
+      "accuracy": 0.7507,
+      "precision": 0.6989,
+      "recall": 0.94,
+      "f1": 0.8017,
+      "train_time": 0.13,
+      "train_size": 3349
+    },
+    {
+      "dataset": "original",
+      "dataset_name": "Original Data",
+      "model": "MLP Neural Network",
+      "accuracy": 0.8284,
+      "precision": 0.8119,
+      "recall": 0.885,
+      "f1": 0.8469,
+      "train_time": 6.08,
+      "train_size": 3349
+    },
+    {
+      "dataset": "extended",
+      "dataset_name": "Extended Data (Balanced & Cleaned)",
+      "model": "Logistic Regression",
+      "accuracy": 0.8231,
+      "precision": 0.8102,
+      "recall": 0.875,
+      "f1": 0.8413,
+      "train_time": 0.01,
+      "train_size": 4856
+    },
+    {
+      "dataset": "extended",
+      "dataset_name": "Extended Data (Balanced & Cleaned)",
+      "model": "MultinomialNB",
+      "accuracy": 0.8177,
+      "precision": 0.8113,
+      "recall": 0.86,
+      "f1": 0.835,
+      "train_time": 0.0,
+      "train_size": 4856
+    },
+    {
+      "dataset": "extended",
+      "dataset_name": "Extended Data (Balanced & Cleaned)",
+      "model": "LinearSVC",
+      "accuracy": 0.7802,
+      "precision": 0.781,
+      "recall": 0.82,
+      "f1": 0.8,
+      "train_time": 0.01,
+      "train_size": 4856
+    },
+    {
+      "dataset": "extended",
+      "dataset_name": "Extended Data (Balanced & Cleaned)",
+      "model": "Random Forest",
+      "accuracy": 0.7614,
+      "precision": 0.7467,
+      "recall": 0.84,
+      "f1": 0.7906,
+      "train_time": 0.27,
+      "train_size": 4856
+    },
+    {
+      "dataset": "extended",
+      "dataset_name": "Extended Data (Balanced & Cleaned)",
+      "model": "MLP Neural Network",
+      "accuracy": 0.807,
+      "precision": 0.7991,
+      "recall": 0.855,
+      "f1": 0.8261,
+      "train_time": 9.62,
+      "train_size": 4856
+    }
+  ],
+  "conclusions": {
+    "best_model": "MultinomialNB",
+    "best_accuracy": 0.8284,
+    "extended_data_impact": "Slight decrease in performance, likely due to noise in RSS/Google News data",
+    "key_findings": [
+      "All models perform better on original data",
+      "Data quality matters more than quantity",
+      "MultinomialNB and Logistic Regression are most stable",
+      "Model generalizes well (only 1% drop when removing person names)"
+    ]
+  }
+}

@@ -1,0 +1,610 @@
+{
+  "experiment_session": "2025-11-26 21:24:29",
+  "total_experiments": 29,
+  "experiments": [
+    {
+      "id": 1,
+      "name": "Baseline (TF-IDF 100 + LogReg)",
+      "stage": "Stage 1: Baseline",
+      "timestamp": "2025-11-26 21:24:29",
+      "config": {
+        "vectorizer": "TfidfVectorizer",
+        "max_features": 100,
+        "stop_words": "english",
+        "model": "LogisticRegression",
+        "max_iter": 100
+      },
+      "metrics": {
+        "accuracy": 0.7265,
+        "precision": 0.7076,
+        "recall": 0.835,
+        "f1": 0.7661
+      },
+      "duration_seconds": 0.05,
+      "notes": "Project document configuration"
+    },
+    {
+      "id": 2,
+      "name": "TF-IDF(500, unigram)",
+      "stage": "Stage 2: TF-IDF Tuning",
+      "timestamp": "2025-11-26 21:24:29",
+      "config": {
+        "vectorizer": "TfidfVectorizer",
+        "max_features": 500,
+        "ngram_range": "(1, 1)",
+        "stop_words": "english",
+        "model": "LogisticRegression",
+        "max_iter": 1000,
+        "C": 1.0
+      },
+      "metrics": {
+        "accuracy": 0.7909,
+        "precision": 0.7652,
+        "recall": 0.88,
+        "f1": 0.8186
+      },
+      "duration_seconds": 0.05,
+      "notes": ""
+    },
+    {
+      "id": 3,
+      "name": "TF-IDF(1000, unigram)",
+      "stage": "Stage 2: TF-IDF Tuning",
+      "timestamp": "2025-11-26 21:24:29",
+      "config": {
+        "vectorizer": "TfidfVectorizer",
+        "max_features": 1000,
+        "ngram_range": "(1, 1)",
+        "stop_words": "english",
+        "model": "LogisticRegression",
+        "max_iter": 1000,
+        "C": 1.0
+      },
+      "metrics": {
+        "accuracy": 0.7962,
+        "precision": 0.765,
+        "recall": 0.895,
+        "f1": 0.8249
+      },
+      "duration_seconds": 0.05,
+      "notes": ""
+    },
+    {
+      "id": 4,
+      "name": "TF-IDF(1000, bigram)",
+      "stage": "Stage 2: TF-IDF Tuning",
+      "timestamp": "2025-11-26 21:24:29",
+      "config": {
+        "vectorizer": "TfidfVectorizer",
+        "max_features": 1000,
+        "ngram_range": "(1, 2)",
+        "stop_words": "english",
+        "model": "LogisticRegression",
+        "max_iter": 1000,
+        "C": 1.0
+      },
+      "metrics": {
+        "accuracy": 0.8016,
+        "precision": 0.7716,
+        "recall": 0.895,
+        "f1": 0.8287
+      },
+      "duration_seconds": 0.09,
+      "notes": ""
+    },
+    {
+      "id": 5,
+      "name": "TF-IDF(2000, bigram)",
+      "stage": "Stage 2: TF-IDF Tuning",
+      "timestamp": "2025-11-26 21:24:29",
+      "config": {
+        "vectorizer": "TfidfVectorizer",
+        "max_features": 2000,
+        "ngram_range": "(1, 2)",
+        "stop_words": "english",
+        "model": "LogisticRegression",
+        "max_iter": 1000,
+        "C": 1.0
+      },
+      "metrics": {
+        "accuracy": 0.7989,
+        "precision": 0.7682,
+        "recall": 0.895,
+        "f1": 0.8268
+      },
+      "duration_seconds": 0.1,
+      "notes": ""
+    },
+    {
+      "id": 6,
+      "name": "TF-IDF(2000, trigram)",
+      "stage": "Stage 2: TF-IDF Tuning",
+      "timestamp": "2025-11-26 21:24:29",
+      "config": {
+        "vectorizer": "TfidfVectorizer",
+        "max_features": 2000,
+        "ngram_range": "(1, 3)",
+        "stop_words": "english",
+        "model": "LogisticRegression",
+        "max_iter": 1000,
+        "C": 1.0
+      },
+      "metrics": {
+        "accuracy": 0.7989,
+        "precision": 0.766,
+        "recall": 0.9,
+        "f1": 0.8276
+      },
+      "duration_seconds": 0.21,
+      "notes": ""
+    },
+    {
+      "id": 7,
+      "name": "TF-IDF(3000, trigram)",
+      "stage": "Stage 2: TF-IDF Tuning",
+      "timestamp": "2025-11-26 21:24:29",
+      "config": {
+        "vectorizer": "TfidfVectorizer",
+        "max_features": 3000,
+        "ngram_range": "(1, 3)",
+        "stop_words": "english",
+        "model": "LogisticRegression",
+        "max_iter": 1000,
+        "C": 1.0
+      },
+      "metrics": {
+        "accuracy": 0.7989,
+        "precision": 0.7637,
+        "recall": 0.905,
+        "f1": 0.8284
+      },
+      "duration_seconds": 0.12,
+      "notes": ""
+    },
+    {
+      "id": 8,
+      "name": "No preprocessing",
+      "stage": "Stage 3: Preprocessing",
+      "timestamp": "2025-11-26 21:24:29",
+      "config": {
+        "preprocessing": "No preprocessing",
+        "vectorizer": "TfidfVectorizer",
+        "max_features": 2000,
+        "ngram_range": "(1,3)",
+        "model": "LogisticRegression"
+      },
+      "metrics": {
+        "accuracy": 0.7989,
+        "precision": 0.766,
+        "recall": 0.9,
+        "f1": 0.8276
+      },
+      "duration_seconds": 0.23,
+      "notes": ""
+    },
+    {
+      "id": 9,
+      "name": "Basic preprocessing (lowercase, remove punct)",
+      "stage": "Stage 3: Preprocessing",
+      "timestamp": "2025-11-26 21:24:30",
+      "config": {
+        "preprocessing": "Basic preprocessing (lowercase, remove punct)",
+        "vectorizer": "TfidfVectorizer",
+        "max_features": 2000,
+        "ngram_range": "(1,3)",
+        "model": "LogisticRegression"
+      },
+      "metrics": {
+        "accuracy": 0.7989,
+        "precision": 0.766,
+        "recall": 0.9,
+        "f1": 0.8276
+      },
+      "duration_seconds": 0.22,
+      "notes": ""
+    },
+    {
+      "id": 10,
+      "name": "Advanced preprocessing (+ remove numbers)",
+      "stage": "Stage 3: Preprocessing",
+      "timestamp": "2025-11-26 21:24:30",
+      "config": {
+        "preprocessing": "Advanced preprocessing (+ remove numbers)",
+        "vectorizer": "TfidfVectorizer",
+        "max_features": 2000,
+        "ngram_range": "(1,3)",
+        "model": "LogisticRegression"
+      },
+      "metrics": {
+        "accuracy": 0.8123,
+        "precision": 0.7778,
+        "recall": 0.91,
+        "f1": 0.8387
+      },
+      "duration_seconds": 0.14,
+      "notes": ""
+    },
+    {
+      "id": 11,
+      "name": "LogisticRegression",
+      "stage": "Stage 4: Classifiers",
+      "timestamp": "2025-11-26 21:24:30",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "classifier": "LogisticRegression",
+        "params": "{'C': 1.0, 'class_weight': None, 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_r..."
+      },
+      "metrics": {
+        "accuracy": 0.7989,
+        "precision": 0.766,
+        "recall": 0.9,
+        "f1": 0.8276
+      },
+      "duration_seconds": 0.0,
+      "notes": ""
+    },
+    {
+      "id": 12,
+      "name": "LogisticRegression(C=0.5)",
+      "stage": "Stage 4: Classifiers",
+      "timestamp": "2025-11-26 21:24:30",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "classifier": "LogisticRegression(C=0.5)",
+        "params": "{'C': 0.5, 'class_weight': None, 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_r..."
+      },
+      "metrics": {
+        "accuracy": 0.8097,
+        "precision": 0.7654,
+        "recall": 0.93,
+        "f1": 0.8397
+      },
+      "duration_seconds": 0.0,
+      "notes": ""
+    },
+    {
+      "id": 13,
+      "name": "LogisticRegression(C=2.0)",
+      "stage": "Stage 4: Classifiers",
+      "timestamp": "2025-11-26 21:24:30",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "classifier": "LogisticRegression(C=2.0)",
+        "params": "{'C': 2.0, 'class_weight': None, 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_r..."
+      },
+      "metrics": {
+        "accuracy": 0.815,
+        "precision": 0.7964,
+        "recall": 0.88,
+        "f1": 0.8361
+      },
+      "duration_seconds": 0.01,
+      "notes": ""
+    },
+    {
+      "id": 14,
+      "name": "MultinomialNB",
+      "stage": "Stage 4: Classifiers",
+      "timestamp": "2025-11-26 21:24:30",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "classifier": "MultinomialNB",
+        "params": "{'alpha': 1.0, 'class_prior': None, 'fit_prior': True, 'force_alpha': True}..."
+      },
+      "metrics": {
+        "accuracy": 0.8177,
+        "precision": 0.7973,
+        "recall": 0.885,
+        "f1": 0.8389
+      },
+      "duration_seconds": 0.0,
+      "notes": ""
+    },
+    {
+      "id": 15,
+      "name": "ComplementNB",
+      "stage": "Stage 4: Classifiers",
+      "timestamp": "2025-11-26 21:24:30",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "classifier": "ComplementNB",
+        "params": "{'alpha': 1.0, 'class_prior': None, 'fit_prior': True, 'force_alpha': True, 'norm': False}..."
+      },
+      "metrics": {
+        "accuracy": 0.8177,
+        "precision": 0.8235,
+        "recall": 0.84,
+        "f1": 0.8317
+      },
+      "duration_seconds": 0.0,
+      "notes": ""
+    },
+    {
+      "id": 16,
+      "name": "LinearSVC",
+      "stage": "Stage 4: Classifiers",
+      "timestamp": "2025-11-26 21:24:30",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "classifier": "LinearSVC",
+        "params": "{'C': 1.0, 'class_weight': None, 'dual': 'auto', 'fit_intercept': True, 'intercept_scaling': 1, 'los..."
+      },
+      "metrics": {
+        "accuracy": 0.7775,
+        "precision": 0.7647,
+        "recall": 0.845,
+        "f1": 0.8029
+      },
+      "duration_seconds": 0.0,
+      "notes": ""
+    },
+    {
+      "id": 17,
+      "name": "SGDClassifier",
+      "stage": "Stage 4: Classifiers",
+      "timestamp": "2025-11-26 21:24:30",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "classifier": "SGDClassifier",
+        "params": "{'alpha': 0.0001, 'average': False, 'class_weight': None, 'early_stopping': False, 'epsilon': 0.1, '..."
+      },
+      "metrics": {
+        "accuracy": 0.7828,
+        "precision": 0.7902,
+        "recall": 0.81,
+        "f1": 0.8
+      },
+      "duration_seconds": 0.01,
+      "notes": ""
+    },
+    {
+      "id": 18,
+      "name": "RandomForest(100)",
+      "stage": "Stage 4: Classifiers",
+      "timestamp": "2025-11-26 21:24:30",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "classifier": "RandomForest(100)",
+        "params": "{'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': None, 'criterion': 'gini', 'max_depth': None, ..."
+      },
+      "metrics": {
+        "accuracy": 0.7882,
+        "precision": 0.7923,
+        "recall": 0.82,
+        "f1": 0.8059
+      },
+      "duration_seconds": 0.24,
+      "notes": ""
+    },
+    {
+      "id": 19,
+      "name": "RandomForest(200)",
+      "stage": "Stage 4: Classifiers",
+      "timestamp": "2025-11-26 21:24:31",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "classifier": "RandomForest(200)",
+        "params": "{'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': None, 'criterion': 'gini', 'max_depth': None, ..."
+      },
+      "metrics": {
+        "accuracy": 0.7936,
+        "precision": 0.786,
+        "recall": 0.845,
+        "f1": 0.8145
+      },
+      "duration_seconds": 0.47,
+      "notes": ""
+    },
+    {
+      "id": 20,
+      "name": "GradientBoosting",
+      "stage": "Stage 4: Classifiers",
+      "timestamp": "2025-11-26 21:24:32",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "classifier": "GradientBoosting",
+        "params": "{'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.1, 'loss': 'log_los..."
+      },
+      "metrics": {
+        "accuracy": 0.7399,
+        "precision": 0.6886,
+        "recall": 0.94,
+        "f1": 0.7949
+      },
+      "duration_seconds": 1.56,
+      "notes": ""
+    },
+    {
+      "id": 21,
+      "name": "VotingClassifier(hard)",
+      "stage": "Stage 5: Ensemble",
+      "timestamp": "2025-11-26 21:24:33",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "ensemble": "VotingClassifier(hard)"
+      },
+      "metrics": {
+        "accuracy": 0.7989,
+        "precision": 0.7729,
+        "recall": 0.885,
+        "f1": 0.8252
+      },
+      "duration_seconds": 0.04,
+      "notes": ""
+    },
+    {
+      "id": 22,
+      "name": "VotingClassifier(soft)",
+      "stage": "Stage 5: Ensemble",
+      "timestamp": "2025-11-26 21:24:36",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "ensemble": "VotingClassifier(soft)"
+      },
+      "metrics": {
+        "accuracy": 0.8177,
+        "precision": 0.7973,
+        "recall": 0.885,
+        "f1": 0.8389
+      },
+      "duration_seconds": 2.98,
+      "notes": ""
+    },
+    {
+      "id": 23,
+      "name": "BaggingClassifier(LogReg)",
+      "stage": "Stage 5: Ensemble",
+      "timestamp": "2025-11-26 21:24:36",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "ensemble": "BaggingClassifier(LogReg)"
+      },
+      "metrics": {
+        "accuracy": 0.807,
+        "precision": 0.7759,
+        "recall": 0.9,
+        "f1": 0.8333
+      },
+      "duration_seconds": 0.13,
+      "notes": ""
+    },
+    {
+      "id": 24,
+      "name": "AdaBoost(LogReg)",
+      "stage": "Stage 5: Ensemble",
+      "timestamp": "2025-11-26 21:24:36",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "ensemble": "AdaBoost(LogReg)"
+      },
+      "metrics": {
+        "accuracy": 0.7346,
+        "precision": 0.744,
+        "recall": 0.77,
+        "f1": 0.7568
+      },
+      "duration_seconds": 0.32,
+      "notes": ""
+    },
+    {
+      "id": 25,
+      "name": "MLP(100)",
+      "stage": "Stage 6: Neural Network",
+      "timestamp": "2025-11-26 21:24:41",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "model": "MLPClassifier",
+        "hidden_layers": "(100,)",
+        "max_iter": 500,
+        "activation": "relu",
+        "solver": "adam",
+        "n_iter": 19,
+        "best_loss": null
+      },
+      "metrics": {
+        "accuracy": 0.8097,
+        "precision": 0.7892,
+        "recall": 0.88,
+        "f1": 0.8322
+      },
+      "duration_seconds": 4.17,
+      "notes": ""
+    },
+    {
+      "id": 26,
+      "name": "MLP(200)",
+      "stage": "Stage 6: Neural Network",
+      "timestamp": "2025-11-26 21:24:46",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "model": "MLPClassifier",
+        "hidden_layers": "(200,)",
+        "max_iter": 500,
+        "activation": "relu",
+        "solver": "adam",
+        "n_iter": 14,
+        "best_loss": null
+      },
+      "metrics": {
+        "accuracy": 0.807,
+        "precision": 0.7645,
+        "recall": 0.925,
+        "f1": 0.8371
+      },
+      "duration_seconds": 5.6,
+      "notes": ""
+    },
+    {
+      "id": 27,
+      "name": "MLP(100,50)",
+      "stage": "Stage 6: Neural Network",
+      "timestamp": "2025-11-26 21:24:50",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "model": "MLPClassifier",
+        "hidden_layers": "(100, 50)",
+        "max_iter": 500,
+        "activation": "relu",
+        "solver": "adam",
+        "n_iter": 14,
+        "best_loss": null
+      },
+      "metrics": {
+        "accuracy": 0.8043,
+        "precision": 0.79,
+        "recall": 0.865,
+        "f1": 0.8258
+      },
+      "duration_seconds": 3.3,
+      "notes": ""
+    },
+    {
+      "id": 28,
+      "name": "MLP(200,100)",
+      "stage": "Stage 6: Neural Network",
+      "timestamp": "2025-11-26 21:24:55",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "model": "MLPClassifier",
+        "hidden_layers": "(200, 100)",
+        "max_iter": 500,
+        "activation": "relu",
+        "solver": "adam",
+        "n_iter": 14,
+        "best_loss": null
+      },
+      "metrics": {
+        "accuracy": 0.7989,
+        "precision": 0.7934,
+        "recall": 0.845,
+        "f1": 0.8184
+      },
+      "duration_seconds": 5.59,
+      "notes": ""
+    },
+    {
+      "id": 29,
+      "name": "MLP(200,100,50)",
+      "stage": "Stage 6: Neural Network",
+      "timestamp": "2025-11-26 21:25:02",
+      "config": {
+        "vectorizer": "TfidfVectorizer(2000, trigram)",
+        "model": "MLPClassifier",
+        "hidden_layers": "(200, 100, 50)",
+        "max_iter": 500,
+        "activation": "relu",
+        "solver": "adam",
+        "n_iter": 16,
+        "best_loss": null
+      },
+      "metrics": {
+        "accuracy": 0.7775,
+        "precision": 0.7826,
+        "recall": 0.81,
+        "f1": 0.7961
+      },
+      "duration_seconds": 6.53,
+      "notes": ""
+    }
+  ]
+}
