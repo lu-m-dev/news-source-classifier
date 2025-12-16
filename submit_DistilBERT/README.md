@@ -37,8 +37,7 @@ python submit_DistilBERT/create_model_pt.py --csv train_urls.csv --epochs 8 --ba
 ```
 
 Outputs:
-- model weights: [submit_DistilBERT/model.pt](submit_DistilBERT/model.pt)
-- tokenizer: [submit_DistilBERT/tokenizer/](submit_DistilBERT/tokenizer/)
+- model weights (with tokenizer included): [submit_DistilBERT/model.pt](submit_DistilBERT/model.pt)
 
 ## Evaluate
 ### Local evaluation (recommended)
